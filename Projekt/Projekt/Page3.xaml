@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Projekt.Page3">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="DOSTĘPNE TRASY"
+               Font="Large" HorizontalOptions="Center" Margin="0,25,0,0"/>
+            <ListView x:Name="listaTras">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0">
+                                <Grid Padding="0">
+
+                                    <Label Margin="10,0,10,0" Text="{Binding Name}" VerticalOptions="Center" Grid.Column="0"/>
+                                    <Label Margin="10,0,10,0" Text="{Binding Description}" VerticalOptions="Center" Grid.Column="1"/>
+                                    
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+          </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

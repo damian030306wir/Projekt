@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:myMap="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Projekt.MainPage">
+    
+    
+   
+    <StackLayout>
+
+        
+
+        <Label Text="KREATOR PUNTKOW/OBIEKTÓW DO TRASY"
+               Font="Large" HorizontalOptions="Center" Margin="0,25,0,0"/>
+        <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:"
+               HorizontalOptions="Center" Margin="0,40,130,0"  />
+        <Entry x:Name="zagadkaEntry" Placeholder="Zagadka/pytanie do obiektu:"
+               Margin="50,25,125,0"  />
+        <Entry x:Name="odpowiedzEntry" Placeholder="Oczekiwana odpowiedź:"
+               Margin="50,25,152,0"  />
+        <Entry x:Name="opisEntry" Placeholder="Opis:"
+                Margin="50,25,150,0"  />
+       
+        <Label Text="Dodaj zdjęcie:"
+               Font="medium"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" Margin="50,25,270,0"/>
+        <Button Text="Dodaj"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="DodajZdjecie" Margin="0,-50,220,0" />
+        <Button Text="Dodaj punkt"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked" Margin="0,10,0,0" />
+        
+
+    </StackLayout>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista dostępnych puntków" 
+                        Activated="ListaPunktowPage2"/>
+        <ToolbarItem Text="Mapa" 
+                        Activated="Map"/>
+
+    </ContentPage.ToolbarItems>
+
+
+</ContentPage>
+
+

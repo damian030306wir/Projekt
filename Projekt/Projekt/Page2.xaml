@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Projekt.Page2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="DODAJ NOWĄ TRASĘ"
+               Font="Large" HorizontalOptions="Center" Margin="0,25,0,0"/>
+
+            <ListView x:Name="listaPunktow">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0">
+                                <Grid Padding="0">
+                                   
+                                    <Label Margin="10,0,10,0" Text="{Binding Nazwa}" VerticalOptions="Center" Grid.Column="0"/>
+                                    <Label Margin="10,0,10,0" Text="{Binding Zagadka}" VerticalOptions="Center" Grid.Column="1"/>
+                                    <Label Margin="10,0,10,0" Text="{Binding Odpowiedz}" VerticalOptions="Center" Grid.Column="2"/>
+                                    <Label Margin="10,0,10,0" Text="{Binding Opis}" VerticalOptions="Center" Grid.Column="3"/>
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                
+            </ListView>
+            
+            <Entry Placeholder="Podaj nazwe trasy"
+                Margin="50,40,130,0"  />
+            <Button Text="Dodaj trasę"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="DodajTrase" Margin="0,0,0,20" />
+        </StackLayout>
+    </ContentPage.Content>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista dostępnych tras" 
+                        Activated="ListaTrasPage3"/>
+
+    </ContentPage.ToolbarItems>
+
+</ContentPage>
