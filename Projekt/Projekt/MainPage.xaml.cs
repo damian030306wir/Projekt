@@ -25,7 +25,7 @@ namespace Projekt
         {
             Trasy trasy = new Trasy()
             {
-                Name = nazwaEntry.Text,
+                Name = nazwaEntry.Text, // Name z Trasy.cs // nazwaEntry z xaml.cs itd. 
                 Description = opisEntry.Text
 
             };
