@@ -16,7 +16,7 @@ namespace Projekt
     public partial class Mapa : ContentPage
     {
         public ObservableCollection<Position> positions = new ObservableCollection<Position>();
-        public ObservableCollection<Position> piny = new ObservableCollection<Position>();
+       
 
         public Mapa()
         {
@@ -30,6 +30,12 @@ namespace Projekt
         void DodajZdjecie(object sender, EventArgs e)
         {
             DisplayAlert("Sukces", "Obrazek został dodany pomyślnie", "Anuluj");
+        }
+        public void ClearButton(object sender, EventArgs e)
+        {
+            maps.Pins.Clear();
+            maps.MapElements.Clear();
+            positions.Clear();
         }
         public void OnMapClicked(object sender, MapClickedEventArgs e)
         {
@@ -66,19 +72,29 @@ namespace Projekt
             Pin pin = new Pin
             {
 
-                Label = "Nazwa",
-                Address = "adres",
+                Label = nazwaEntry.Text,
+                Address = opisEntry.Text,
                 Type = PinType.SavedPin,
                 Position = new Position(Convert.ToDouble(szerokosc.Text), Convert.ToDouble(dlugosc.Text))
 
             };
-            piny.Add(new Position(Convert.ToDouble(szerokosc.Text), Convert.ToDouble(dlugosc.Text)));
+            pin.MarkerClicked += async (s, args) =>
+            {
+                args.HideInfoWindow = true;
+                string pinName = ((Pin)s).Label;
+                string pytanie = ((Pin)s).Address;
+                await DisplayAlert("Pin Clicked", $"{pinName} was clicked.", "Ok");
+                string result = await DisplayPromptAsync("Zagadka", $"{pytanie}", initialValue: "10", maxLength: 2, keyboard: Keyboard.Numeric);
+               
+            };
+
+            positions.Add(new Position(Convert.ToDouble(szerokosc.Text), Convert.ToDouble(dlugosc.Text)));
             Polyline polyline = new Polyline
             {
                 StrokeColor = Color.Blue,
                 StrokeWidth = 6
             };
-            foreach (Position pos in piny)
+            foreach (Position pos in positions)
             {
                 polyline.Geopath.Add(pos);
 

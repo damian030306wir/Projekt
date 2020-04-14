@@ -38,7 +38,7 @@
         <Entry x:Name="dlugosc" Placeholder="Długość geograficzna:" FontSize="Small"/>
 
 
-        <StackLayout  Orientation="Horizontal" Margin="75,0,0,20">
+        <StackLayout  Orientation="Horizontal" Margin="30,0,0,20">
             <Button Text="Dodaj zdjęcie"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"
@@ -47,6 +47,10 @@
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"
                 Clicked="OnButton" />
+            <Button Text="Wyczyść "
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="ClearButton" />
            
             
 
