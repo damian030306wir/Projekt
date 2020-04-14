@@ -5,29 +5,60 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
-             x:Class="Projekt.Mapa">
+             x:Class="Projekt.Mapa" >
+    
 
 
-    <StackLayout>
-        <maps:Map x:Name="maps" Margin="8" IsShowingUser="true" MapClicked="OnMapClicked">
-        <x:Arguments>
-            <maps:MapSpan>
-                <x:Arguments>
-                    <maps:Position>
-                        <x:Arguments>
-                            <x:Double>53.010281</x:Double>
-                            <x:Double>18.604922</x:Double>
-                        </x:Arguments>
-                    </maps:Position>
-                    <x:Double>0.05</x:Double>
-                    <x:Double>0.05</x:Double>
-                </x:Arguments>
-            </maps:MapSpan>
-        </x:Arguments>
+    <StackLayout >
+
+        <maps:Map x:Name="maps" Margin="3"  IsShowingUser="true" MapClicked="OnMapClicked">
+           
+            <x:Arguments>
+                <maps:MapSpan>
+                    <x:Arguments>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>53.010281</x:Double>
+                                <x:Double>18.604922</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                        <x:Double>0.05</x:Double>
+                        <x:Double>0.05</x:Double>
+                    </x:Arguments>
+                </maps:MapSpan>
+            </x:Arguments>
+           
     </maps:Map>
-    </StackLayout>
+
+        <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" />
+        <Entry x:Name="opisEntry" Placeholder="Opis:" FontSize="Small"/>
+        <Entry x:Name="zagadkaEntry" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small"/>
+        <Entry x:Name="odpowiedzEntry" Placeholder="Oczekiwana odpowiedź:" FontSize="Small"/>
+        <Entry x:Name="szerokosc" Placeholder="Szerokość geograficzna:" FontSize="Small"/>
+        <Entry x:Name="dlugosc" Placeholder="Długość geograficzna:" FontSize="Small"/>
 
 
+        <StackLayout  Orientation="Horizontal" Margin="75,0,0,20">
+            <Button Text="Dodaj zdjęcie"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="DodajZdjecie" />
+            <Button Text="Dodaj punkt "
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnButton" />
+           
+            
 
+        </StackLayout>
+
+    </StackLayout >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista dostępnych puntków" 
+                        Activated="ListaPunktowPage2"/>
+        
+
+    </ContentPage.ToolbarItems>
 
 </ContentPage>

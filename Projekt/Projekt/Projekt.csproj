@@ -11,9 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Class1.cs" />
     <Compile Remove="ListViewPage1.xaml.cs" />
     <Compile Remove="Page1.cs" />
     <Compile Remove="Page1.xaml.cs" />
+    <Compile Remove="Pin.cs" />
     <Compile Remove="TabbedPage1.xaml.cs" />
   </ItemGroup>
 
