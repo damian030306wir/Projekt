@@ -108,7 +108,7 @@ namespace Projekt
 
             HttpClient client = new HttpClient();
 
-            var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/Points", content);
+            var result = await client.PostAsync("http://dearjean.ddns.net:44201/api/Points", content);
 
             if (result.StatusCode == HttpStatusCode.Created)
             {
